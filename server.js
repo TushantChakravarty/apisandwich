@@ -1,7 +1,7 @@
 'use strict';
 
 console.log('');
-console.log('//Munzi Backend//');
+console.log('//API SANDWICH BACKEND//');
 console.log('');
 require('dotenv').config();
 var res = require('dotenv').config();

@@ -43,3 +43,14 @@ const port=2000
 
  
 });
+/**
+ * 
+ * "emailId": "tushantxyzz",
+    "apiKey": "q34uc0r7ny"
+
+    admin credentials
+    
+ "email": "samir@payhub",
+        "password": "ua5emgzm2xao4za6i7uo",
+        "apiKey": "eje92rqgxbf"
+ */

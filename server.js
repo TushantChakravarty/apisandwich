@@ -55,6 +55,11 @@ const port=2000
     admin credentials
     
  "email": "samir@payhub",
-        "password": "ua5emgzm2xao4za6i7uo",
+        "password": " mkali126",
         "apiKey": "eje92rqgxbf"
+
+
+         "email": "tushant2909@gmail.com",
+        "password": "62pmjrgbl97uvlxer8kh",
+        "apiKey": "1iqj733f3xt"
  */

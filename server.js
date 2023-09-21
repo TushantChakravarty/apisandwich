@@ -5,9 +5,9 @@ console.log('//API SANDWICH BACKEND//');
 console.log('');
 require('dotenv').config();
 var res = require('dotenv').config();
-const appUtils = require('./lib/appUtils')
-const market = require('./lib/Market/marketDao')
-const MarketUtilities = require('./lib/Market/marketUtilities')
+// const appUtils = require('./lib/appUtils')
+// const market = require('./lib/Market/marketDao')
+// const MarketUtilities = require('./lib/Market/marketUtilities')
 //Import Config
 const config = require('./lib/config');
 // const socket = require("socket.io");

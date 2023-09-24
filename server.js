@@ -66,4 +66,11 @@ const port=2000
         "email": "samir123@payhub",
         "password": "8s5ozglbdxpo7vupqpg1",
         "apiKey": "dk3lonopa4i"
+
+
+        user
+
+         email: 'jonty128@gmail.com',
+  password: '7kjvytthm1tfwv2npkoj',
+  apiKey: 'U2FsdGVkX1/pe02WKy2VrritbExuKdW/zyjTYJ0PJiE='
  */

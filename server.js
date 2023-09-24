@@ -73,4 +73,8 @@ const port=2000
          email: 'jonty128@gmail.com',
   password: '7kjvytthm1tfwv2npkoj',
   apiKey: 'U2FsdGVkX1/pe02WKy2VrritbExuKdW/zyjTYJ0PJiE='
+
+   "email": "tushant2907@gmail.com",
+        "password": "hvznd89ucrlneh2uteng",
+        "apiKey": "U2FsdGVkX19nJYUKRmoF3i/7Q/g8kKovBQ78miTfsI4="
  */

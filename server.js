@@ -75,6 +75,6 @@ const port=2000
   apiKey: 'U2FsdGVkX1/pe02WKy2VrritbExuKdW/zyjTYJ0PJiE='
 
    "email": "tushant2907@gmail.com",
-        "password": "hvznd89ucrlneh2uteng",
+        "password": "tushant2907",
         "apiKey": "U2FsdGVkX19nJYUKRmoF3i/7Q/g8kKovBQ78miTfsI4="
  */

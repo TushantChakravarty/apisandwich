@@ -52,7 +52,7 @@ const port=2000
  * "emailId": "tushantxyzz",
     "apiKey": "q34uc0r7ny"
 
-    admin credentials
+    admin credential
     
  "email": "samir@payhub",
         "password": " mkali126",

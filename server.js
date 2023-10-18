@@ -5,11 +5,22 @@ console.log('//API SANDWICH BACKEND//');
 console.log('');
 require('dotenv').config();
 var res = require('dotenv').config();
+const cron = require('node-cron');
+const { exec } = require('child_process');
+const config = require('./lib/config');
+const { myFunction } = require('./lib/user/scheduler/scheduler');
+// Schedule your script to run at midnight IST (UTC+5:30)
+cron.schedule('30 18 * * *', () => {
+  console.log('Running your Node.js script...');
+  exec('node ./lib/user/scheduler/scheduler.js', (error, stdout, stderr) => {
+   myFunction()
+  });
+});
 // const appUtils = require('./lib/appUtils')
 // const market = require('./lib/Market/marketDao')
 // const MarketUtilities = require('./lib/Market/marketUtilities')
 //Import Config
-const config = require('./lib/config');
+
 // const socket = require("socket.io");
 
  config.dbConfig((err) => {

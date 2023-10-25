@@ -10,18 +10,18 @@ const { exec } = require('child_process');
 const config = require('./lib/config');
 const { myFunction } = require('./lib/user/scheduler/scheduler');
 // Schedule your script to run at midnight IST (UTC+5:30)
-const task = cron.schedule('55 18 * * *', async () => {
+cron.schedule('5 19 * * *', async () => {
   console.log('Running your Node.js script...');
   exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
     if (error) {
       console.error('Error running scheduler.js:', error);
     } else {
-      setTimeout(async () => {
+      
         
         await myFunction();
-      }, 30000);
+     
     }
-    task.stop();
+   
   });
 });
 // const appUtils = require('./lib/appUtils')

@@ -10,7 +10,7 @@ const { exec } = require('child_process');
 const config = require('./lib/config');
 const { myFunction } = require('./lib/user/scheduler/scheduler');
 // Schedule your script to run at midnight IST (UTC+5:30)
-cron.schedule('30 18 0 * * *', async () => {
+cron.schedule('0 30 18 * * *', async () => {
   console.log('Running your Node.js script...');
   exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
     if (error) {

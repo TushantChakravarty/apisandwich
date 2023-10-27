@@ -1899,6 +1899,11 @@ node-gyp-build@^4.3.0:
   resolved "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.4.0.tgz"
   integrity sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==
 
+node-php@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/node-php/-/node-php-0.0.1.tgz"
+  integrity sha512-ViiDOXrL+ts7erCrenUEPGHL7qaigICWbB8JwI06aGp4TGbSM6TNRLBBQgKHWuuc1oZQa1qZDYUQNoW6ABsv4A==
+
 nodemailer@^6.4.17:
   version "6.6.3"
   resolved "https://registry.npmjs.org/nodemailer/-/nodemailer-6.6.3.tgz"

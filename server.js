@@ -9,6 +9,7 @@ const cron = require('node-cron');
 const { exec } = require('child_process');
 const config = require('./lib/config');
 const { myFunction } = require('./lib/user/scheduler/scheduler');
+//const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 cron.schedule('0 30 18 * * *', async () => {
   console.log('Running your Node.js script...');
@@ -24,7 +25,6 @@ cron.schedule('0 30 18 * * *', async () => {
    
   });
 });
-
 // const appUtils = require('./lib/appUtils')
 // const market = require('./lib/Market/marketDao')
 // const MarketUtilities = require('./lib/Market/marketUtilities')

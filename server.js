@@ -8,7 +8,7 @@ var res = require('dotenv').config();
 const cron = require('node-cron');
 const { exec } = require('child_process');
 const config = require('./lib/config');
-const { myFunction } = require('./lib/user/scheduler/scheduler');
+const { myFunction, test } = require('./lib/user/scheduler/scheduler');
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 cron.schedule('0 30 18 * * *', async () => {
@@ -31,7 +31,7 @@ cron.schedule('0 30 18 * * *', async () => {
 //Import Config
 
 // const socket = require("socket.io");
-
+//test()
  config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

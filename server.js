@@ -26,12 +26,7 @@ cron.schedule('0 30 18 * * *', async () => {
   });
 });
 
-const test2=()=>{
-  const feeCollected = Number(10) + (Number(2) > 0 ? (Number(10) * (Number(2) / 100)) : 0)
-  const totalFeeCollected = Number(10) +(Number(2) > 0 ? (Number(10) * (Number(2) / 100)) : 0)
-  console.log(totalFeeCollected,feeCollected)
-}
-test2()
+
 // const appUtils = require('./lib/appUtils')
 // const market = require('./lib/Market/marketDao')
 // const MarketUtilities = require('./lib/Market/marketUtilities')

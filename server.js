@@ -12,19 +12,52 @@ const { myFunction, test } = require('./lib/user/scheduler/scheduler');
 const { swipeLineUpi } = require('./lib/controllers/swipeline');
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
-cron.schedule('0 30 18 * * *', async () => {
-  console.log('Running your Node.js script...');
-  exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
-    if (error) {
-      console.error('Error running scheduler.js:', error);
-    } else {
+// cron.schedule('0 30 18 * * *', async () => {
+//   console.log('Running your Node.js script...');
+//   exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
+//     if (error) {
+//       console.error('Error running scheduler.js:', error);
+//     } else {
       
         
-        await myFunction();
+//         await myFunction();
      
-    }
+//     }
    
-  });
+//   });
+// });
+// cron.schedule('0 30 18 * * *', async () => {
+//   const today = new Date();
+//   const isSameDay = today.getUTCHours() === 18 && today.getUTCMinutes() === 30;
+
+//   if (!executed && isSameDay) {
+//     console.log('Running your Node.js script...');
+//     exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
+//       if (error) {
+//         console.error('Error running scheduler.js:', error);
+//       } else {
+//         await myFunction();
+//         executed = true;
+//       }
+//     });
+//   } else {
+//     executed = false; // Reset the flag for the next day
+//   }
+// });
+
+let executed = false;
+
+cron.schedule('0 30 18 * * *', async () => {
+  const today = new Date();
+  const isSameDay = today.getUTCHours() === 18 && today.getUTCMinutes() === 30;
+
+  if (!executed && isSameDay) {
+    console.log('Running your function...');
+    await myFunction();
+    executed = true;
+  } else if (executed && !isSameDay) {
+    executed = false; // Reset the flag for the next day
+  }
 });
 
 //swipeLineUpi()

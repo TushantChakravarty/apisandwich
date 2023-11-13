@@ -9,6 +9,7 @@ const cron = require('node-cron');
 const { exec } = require('child_process');
 const config = require('./lib/config');
 const { myFunction, test } = require('./lib/user/scheduler/scheduler');
+const { decryptParameters } = require('./lib/appUtils');
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 //myFunction()
@@ -26,6 +27,8 @@ cron.schedule('0 30 18 * * *', async () => {
    
   });
 });
+//const decrypt = decryptParameters('U2FsdGVkX1/frrl08RTnPPZWrXH7f5NzZNvvsN7rHFE25oM1CxTF9htqXX9MZ3JLLCwzJKlaibGUUXQw6zrnoJR9EW7S0lbUgLdJ/xqSRUG8svR4u2ol88huDW952d9f9C3BuJA/mMKS/x95zemDv0ibNclCkxB5cMrqL4sLiWcKLyq8PNDw0jkLoK4S3ccJUZ+XKvgohfxYTZAf0yY4EGGOwMiiM+ljrOsAnpVNF3apW0UuZaUJysbxY5JuQA6QVnZFQx5Ab+8hRHU94Vf5rA==',"0Ud3pRMqpT0M3qp9XP")
+//console.log(decrypt)
 // cron.schedule('0 30 18 * * *', async () => {
 //   const today = new Date();
 //   const isSameDay = today.getUTCHours() === 18 && today.getUTCMinutes() === 30;

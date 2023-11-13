@@ -8,25 +8,60 @@ var res = require('dotenv').config();
 const cron = require('node-cron');
 const { exec } = require('child_process');
 const config = require('./lib/config');
-const { myFunction, test } = require('./lib/user/scheduler/scheduler');
+const { myFunction, test, pushGatewayDetails } = require('./lib/user/scheduler/scheduler');
 const { decryptParameters } = require('./lib/appUtils');
+const fs = require('fs');
+const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
+const DATE_FILE = 'last_execution_date.txt';
+// const lastExecutionDate = fs.existsSync(DATE_FILE)
+// ? fs.readFileSync(DATE_FILE, 'utf8').trim()
+// : null;
+// const checkfile = fs.readFileSync('last_execution_date.txt')
+// console.log('last date',lastExecutionDate)
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 //myFunction()
-cron.schedule('0 30 18 * * *', async () => {
-  console.log('Running your Node.js script...');
-  exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
-    if (error) {
-      console.error('Error running scheduler.js:', error);
-    } else {
+const func =async ()=>{
+  //pushGatewayDetails()
+  const data =await fetchDataForCurrentDate()
+  console.log(data)
+}
+func()
+
+// Schedule the cron job to run at 6:30 PM UTC daily
+cron.schedule('0 30 18 * * *', () => {
+  // Get the last execution date from the file
+  const lastExecutionDate = fs.existsSync(DATE_FILE)
+    ? fs.readFileSync(DATE_FILE, 'utf8').trim()
+    : null;
+
+  // Get the current date
+  const currentDate = new Date().toISOString().split('T')[0];
+
+  // Check if the function has not been executed today
+  if (lastExecutionDate !== currentDate) {
+    // Run your function
+    myFunction();
+
+    // Update the last execution date in the file
+    fs.writeFileSync(DATE_FILE, currentDate);
+  }
+});
+
+// cron.schedule('0 30 18 * * *', async () => {
+//   console.log('Running your Node.js script...');
+//   exec('node ./lib/user/scheduler/scheduler.js', async (error, stdout, stderr) => {
+//     if (error) {
+//       console.error('Error running scheduler.js:', error);
+//     } else {
       
         
-        await myFunction();
+//         await myFunction();
      
-    }
+//     }
    
-  });
-});
+//   });
+// });
 //const decrypt = decryptParameters('U2FsdGVkX1/frrl08RTnPPZWrXH7f5NzZNvvsN7rHFE25oM1CxTF9htqXX9MZ3JLLCwzJKlaibGUUXQw6zrnoJR9EW7S0lbUgLdJ/xqSRUG8svR4u2ol88huDW952d9f9C3BuJA/mMKS/x95zemDv0ibNclCkxB5cMrqL4sLiWcKLyq8PNDw0jkLoK4S3ccJUZ+XKvgohfxYTZAf0yY4EGGOwMiiM+ljrOsAnpVNF3apW0UuZaUJysbxY5JuQA6QVnZFQx5Ab+8hRHU94Vf5rA==',"0Ud3pRMqpT0M3qp9XP")
 //console.log(decrypt)
 // cron.schedule('0 30 18 * * *', async () => {

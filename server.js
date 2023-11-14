@@ -33,6 +33,29 @@ const DATE_FILE = 'last_execution_date.txt';
 // }
 // func()
 
+const phonepe = ()=>{
+  // Your JSON payload
+  const data ={
+    "merchantId": "M15N4WTCAKPN",
+    "merchantTransactionId": "MT7850590068188104",
+    "merchantUserId": "0b1ab943-cf1b-49cd-84a5-27131fcb909f",
+    "amount": 10000,
+    "redirectUrl": "https://webhook.site/redirect-url",
+    "redirectMode": "REDIRECT",
+    "callbackUrl": "https://webhook.site/callback-url",
+    "mobileNumber": "9999999999",
+    "paymentInstrument": {
+      "type": "PAY_PAGE"
+    }
+  }
+// Convert JSON to string and encode to Base64
+const base64Payload = Buffer.from(JSON.stringify(data)).toString('base64');
+
+console.log(base64Payload);
+
+}
+
+phonepe()
 // Schedule the cron job to run at 6:30 PM UTC daily
 cron.schedule('0 30 18 * * *', () => {
   // Get the last execution date from the file

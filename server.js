@@ -22,9 +22,14 @@ const DATE_FILE = 'last_execution_date.txt';
 // Schedule your script to run at midnight IST (UTC+5:30)
 //myFunction()
 // const func =async ()=>{
-//   //pushGatewayDetails()
-//   const data =await fetchDataForCurrentDate()
-//   console.log(data)
+//   pushGatewayDetails()
+//   .then(async ()=>{
+   
+
+//   }).finally(async ()=>{
+//     const data =await fetchDataForCurrentDate()
+//     console.log(data)
+//   })
 // }
 // func()
 

@@ -21,12 +21,12 @@ const DATE_FILE = 'last_execution_date.txt';
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 //myFunction()
-const func =async ()=>{
-  //pushGatewayDetails()
-  const data =await fetchDataForCurrentDate()
-  console.log(data)
-}
-func()
+// const func =async ()=>{
+//   //pushGatewayDetails()
+//   const data =await fetchDataForCurrentDate()
+//   console.log(data)
+// }
+// func()
 
 // Schedule the cron job to run at 6:30 PM UTC daily
 cron.schedule('0 30 18 * * *', () => {

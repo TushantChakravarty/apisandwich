@@ -14,7 +14,7 @@ const fs = require('fs');
 const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
 const currentDate = new Date().toISOString().split('T')[0];
 
-const DATE_FILE = '/data/info/last_execution_date.txt';
+const DATE_FILE = './data/info/last_execution_date.txt';
 const lastExecutionDate = fs.existsSync(DATE_FILE)
 ? fs.readFileSync(DATE_FILE, 'utf8').trim()
 : null;

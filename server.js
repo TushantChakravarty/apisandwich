@@ -90,6 +90,7 @@ cron.schedule('0 30 18 * * *',async  () => {
   if (lastExecutionDate !== currentDate) {
     // Run your function
     myFunction();
+    console.log('running')
 
     // Update the last execution date in the file
     //fs.writeFileSync(DATE_FILE, currentDate);

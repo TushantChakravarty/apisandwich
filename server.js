@@ -12,6 +12,22 @@ const { myFunction, test, pushGatewayDetails } = require('./lib/user/scheduler/s
 const { decryptParameters } = require('./lib/appUtils');
 const fs = require('fs');
 const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
+const adminDao = require('./lib/user/adminDao')
+
+
+// const func = async ()=>{
+//   const currentDate = new Date().toISOString().split('T')[0];
+//   const admin = await adminDao.getUserDetails({
+//     emailId: 'samir123@payhub'
+//   });
+//   const update ={
+//     lastExecutionDate:currentDate
+//   }
+//   adminDao.updateProfile({
+//     emailId: 'samir123@payhub'
+//   },update)
+// }
+// func()
 // const currentDate = new Date().toISOString().split('T')[0];
 
 // const DATE_FILE = './data/info/last_execution_date.txt';
@@ -60,11 +76,12 @@ const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
 
 // phonepe()
 // Schedule the cron job to run at 6:30 PM UTC daily
-cron.schedule('0 30 18 * * *', () => {
+cron.schedule('0 30 18 * * *',async  () => {
   // Get the last execution date from the file
-  const lastExecutionDate = fs.existsSync(DATE_FILE)
-    ? fs.readFileSync(DATE_FILE, 'utf8').trim()
-    : null;
+  const admin = await adminDao.getUserDetails({
+    emailId: 'samir123@payhub'
+  });
+  const lastExecutionDate = admin.lastExecutionDate
 
   // Get the current date
   const currentDate = new Date().toISOString().split('T')[0];
@@ -75,7 +92,13 @@ cron.schedule('0 30 18 * * *', () => {
     myFunction();
 
     // Update the last execution date in the file
-    fs.writeFileSync(DATE_FILE, currentDate);
+    //fs.writeFileSync(DATE_FILE, currentDate);
+    const update ={
+      lastExecutionDate:currentDate
+    }
+    adminDao.updateProfile({
+      emailId: 'samir123@payhub'
+    },update)
   }
 });
 

@@ -13,11 +13,11 @@ const { decryptParameters } = require('./lib/appUtils');
 const fs = require('fs');
 const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
 const DATE_FILE = 'last_execution_date.txt';
-// const lastExecutionDate = fs.existsSync(DATE_FILE)
-// ? fs.readFileSync(DATE_FILE, 'utf8').trim()
-// : null;
-// const checkfile = fs.readFileSync('last_execution_date.txt')
-// console.log('last date',lastExecutionDate)
+const lastExecutionDate = fs.existsSync(DATE_FILE)
+? fs.readFileSync(DATE_FILE, 'utf8').trim()
+: null;
+const checkfile = fs.readFileSync('last_execution_date.txt')
+console.log('last date',lastExecutionDate)
 //const { getGatewayDetails } = require('./lib/user/adminDao');
 // Schedule your script to run at midnight IST (UTC+5:30)
 //myFunction()

@@ -8,7 +8,7 @@ var res = require('dotenv').config();
 const cron = require('node-cron');
 const { exec } = require('child_process');
 const config = require('./lib/config');
-const { myFunction, test, pushGatewayDetails } = require('./lib/user/scheduler/scheduler');
+const { myFunction, test, pushGatewayDetails, getPendingTx } = require('./lib/user/scheduler/scheduler');
 const { decryptParameters } = require('./lib/appUtils');
 const fs = require('fs');
 const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
@@ -76,6 +76,7 @@ const adminDao = require('./lib/user/adminDao')
 
 // phonepe()
 // Schedule the cron job to run at 6:30 PM UTC daily
+//getPendingTx()
 cron.schedule('0 30 18 * * *',async  () => {
   // Get the last execution date from the file
   const admin = await adminDao.getUserDetails({

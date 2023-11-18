@@ -158,15 +158,7 @@ cron.schedule('0 30 18 * * *',async  () => {
 //   }
 // });
 
-//swipeLineUpi()
 
-// const appUtils = require('./lib/appUtils')
-// const market = require('./lib/Market/marketDao')
-// const MarketUtilities = require('./lib/Market/marketUtilities')
-//Import Config
-
-// const socket = require("socket.io");
-//test()
  config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

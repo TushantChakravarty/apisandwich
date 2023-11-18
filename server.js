@@ -13,8 +13,12 @@ const { decryptParameters } = require('./lib/appUtils');
 const fs = require('fs');
 const { fetchDataForCurrentDate } = require('./lib/user/gatewayDao');
 const adminDao = require('./lib/user/adminDao')
+// const func = async ()=>{
 
-
+//   const data = await adminDao.getAllTransactionWithSuccessStatus('sameerdev1203@gmail.com')
+//   console.log(data)
+// }
+// func()
 // const func = async ()=>{
 //   const currentDate = new Date().toISOString().split('T')[0];
 //   const admin = await adminDao.getUserDetails({

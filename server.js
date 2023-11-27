@@ -107,4 +107,9 @@ cron.schedule('0 30 18 * * *',async  () => {
         Email id: tushant29089@gmail.com
 Password: flejoi2fc3rqn5t874ch
 Apikey: U2FsdGVkX18jB5Et3CNmzR8q5Zdrz3cHixHyUyGdUYs=
+
+
+Email id: jontyrhodes@gmail
+Password: 4do5vx514f56jxv7kkd1
+Apikey: U2FsdGVkX19MkOae7dB35cg6hDpxjBmEWQvp4ghodSg=
  */

@@ -38,6 +38,31 @@ cron.schedule('0 30 18 * * *',async  () => {
   }
 });
 
+cron.schedule('*/20 * * * *', async () => {
+  adminDao.updateVolumeData()
+  adminDao.getTotalVolume()
+});
+
+// function getCurrentDateFormatted() {
+//   const currentDate = new Date();
+
+//   const year = currentDate.getFullYear();
+//   const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+//   const day = String(currentDate.getDate()).padStart(2, '0');
+
+//   const formattedDate = `${year}-${month}-${day}`;
+
+//   return formattedDate;
+// }
+// async function check(){
+//   const data = await getAllUserTx()
+//   console.log(data)
+// }
+// //check()
+
+// const currentDateFormatted = getCurrentDateFormatted();
+// console.log(currentDateFormatted);
+
  config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

@@ -38,10 +38,10 @@ cron.schedule('0 30 18 * * *',async  () => {
   }
 });
 
-cron.schedule('*/20 * * * *', async () => {
-  adminDao.updateVolumeData()
-  adminDao.getTotalVolume()
-});
+// cron.schedule('*/20 * * * *', async () => {
+//   adminDao.updateVolumeData()
+//   adminDao.getTotalVolume()
+// });
 
 // function getCurrentDateFormatted() {
 //   const currentDate = new Date();

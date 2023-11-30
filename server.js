@@ -10,6 +10,7 @@ const config = require('./lib/config');
 const { myFunction} = require('./lib/user/scheduler/scheduler');
 const adminDao = require('./lib/user/adminDao');
 const { getAllUserTx } = require('./lib/user/adminService');
+const moment = require('moment-timezone');
 
 cron.schedule('0 30 18 * * *',async  () => {
   // Get the last execution date from the file
@@ -38,19 +39,19 @@ cron.schedule('0 30 18 * * *',async  () => {
   }
 });
 
-// cron.schedule('*/20 * * * *', async () => {
-//   adminDao.updateVolumeData()
-//   adminDao.getTotalVolume()
-// });
+cron.schedule('*/1 * * * *', async () => {
+  await adminDao.updateVolumeData('success')
+  await adminDao.getTotalVolume('success')
+});
 
 // function getCurrentDateFormatted() {
-//   const currentDate = new Date();
+//   const currentDate = moment().tz('Asia/Kolkata');
 
-//   const year = currentDate.getFullYear();
-//   const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-//   const day = String(currentDate.getDate()).padStart(2, '0');
+//   const year = currentDate.year();
+//   const month = currentDate.month() + 1; // Months are zero-indexed in moment
+//   const day = currentDate.date();
 
-//   const formattedDate = `${year}-${month}-${day}`;
+//   const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
 //   return formattedDate;
 // }

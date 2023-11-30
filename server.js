@@ -8,7 +8,8 @@ var res = require('dotenv').config();
 const cron = require('node-cron');
 const config = require('./lib/config');
 const { myFunction} = require('./lib/user/scheduler/scheduler');
-const adminDao = require('./lib/user/adminDao')
+const adminDao = require('./lib/user/adminDao');
+const { getAllUserTx } = require('./lib/user/adminService');
 
 cron.schedule('0 30 18 * * *',async  () => {
   // Get the last execution date from the file
@@ -36,8 +37,6 @@ cron.schedule('0 30 18 * * *',async  () => {
     },update)
   }
 });
-
-
 
  config.dbConfig((err) => {
   if (err) {

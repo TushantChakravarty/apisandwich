@@ -39,7 +39,7 @@ cron.schedule('0 30 18 * * *',async  () => {
   }
 });
 
-cron.schedule('*/1 * * * *', async () => {
+cron.schedule('*/20 * * * *', async () => {
   await adminDao.updateVolumeData('success')
   await adminDao.getTotalVolume('success')
 });

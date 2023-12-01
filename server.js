@@ -42,28 +42,14 @@ cron.schedule('0 30 18 * * *',async  () => {
 cron.schedule('*/20 * * * *', async () => {
   await adminDao.updateVolumeData('success')
   await adminDao.getTotalVolume('success')
+  await adminDao.updateGatewayVolumeData()
 });
 
-// function getCurrentDateFormatted() {
-//   const currentDate = moment().tz('Asia/Kolkata');
 
-//   const year = currentDate.year();
-//   const month = currentDate.month() + 1; // Months are zero-indexed in moment
-//   const day = currentDate.date();
 
-//   const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
-//   return formattedDate;
-// }
-// async function check(){
-//   const data = await getAllUserTx()
-//   console.log(data)
-// }
-// //check()
-
-// const currentDateFormatted = getCurrentDateFormatted();
-// console.log(currentDateFormatted);
-
+//adminDao.getTotalVolumeGateway('success','airpay')
+//adminDao.updateGatewayVolumeData()
  config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

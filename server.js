@@ -51,8 +51,8 @@ cron.schedule("*/20 * * * *", async () => {
 cron.schedule("*/30 * * * *", async () => {
   await adminDao.updateTotalGatewayBalance();
   await adminDao.updateBalanceMerchants()
+  await adminDao.updateBalanceAdmin()
 });
-
 
 config.dbConfig((err) => {
   if (err) {

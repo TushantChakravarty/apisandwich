@@ -43,12 +43,16 @@ cron.schedule('*/20 * * * *', async () => {
   await adminDao.updateVolumeData('success')
   await adminDao.getTotalVolume('success')
   await adminDao.updateGatewayVolumeData()
+
+});
+
+cron.schedule('*/60 * * * *', async () => {
+ 
+  await adminDao.updateTotalGatewayBalance()
+
 });
 
 
-
-//adminDao.getTotalVolumeGateway('success','airpay')
-//adminDao.updateGatewayVolumeData()
  config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

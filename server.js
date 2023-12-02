@@ -50,7 +50,7 @@ cron.schedule("*/20 * * * *", async () => {
 
 cron.schedule("*/30 * * * *", async () => {
   await adminDao.updateTotalGatewayBalance();
-  adminDao.updateBalanceMerchants()
+  await adminDao.updateBalanceMerchants()
 });
 
 

@@ -47,7 +47,6 @@ cron.schedule('*/20 * * * *', async () => {
 
 
 
-
 //adminDao.getTotalVolumeGateway('success','airpay')
 //adminDao.updateGatewayVolumeData()
  config.dbConfig((err) => {

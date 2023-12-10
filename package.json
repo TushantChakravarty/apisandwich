@@ -9,17 +9,10 @@
     "qa": "NODE_ENV=qa node server.js",
     "start": " node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CodezerosDev/RFIDBackendAPI.git"
-  },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CodezerosDev/RFIDBackendAPI/issues"
-  },
-  "homepage": "https://github.com/CodezerosDev/RFIDBackendAPI#readme",
   "dependencies": {
     "aes-js": "^3.1.2",
     "async": "^3.2.5",

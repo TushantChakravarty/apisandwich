@@ -42,17 +42,17 @@ cron.schedule("0 30 18 * * *", async () => {
   }
 });
 
-// cron.schedule("*/20 * * * *", async () => {
-//   await adminDao.updateVolumeData("success");
-//   await adminDao.getTotalVolume("success");
-//   await adminDao.updateGatewayVolumeData();
-// });
+cron.schedule("*/20 * * * *", async () => {
+  await adminDao.updateVolumeData("success");
+  await adminDao.getTotalVolume("success");
+  await adminDao.updateGatewayVolumeData();
+});
 
-// cron.schedule("*/30 * * * *", async () => {
-//   await adminDao.updateTotalGatewayBalance();
-//   await adminDao.updateBalanceMerchants()
-//   await adminDao.updateBalanceAdmin()
-// });
+cron.schedule("*/30 * * * *", async () => {
+  await adminDao.updateTotalGatewayBalance();
+  await adminDao.updateBalanceMerchants()
+  await adminDao.updateBalanceAdmin()
+});
 
 config.dbConfig((err) => {
   if (err) {

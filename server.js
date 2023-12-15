@@ -9,11 +9,8 @@ const cron = require("node-cron");
 const config = require("./lib/config");
 const { myFunction } = require("./lib/user/scheduler/scheduler");
 const adminDao = require("./lib/user/adminDao");
-const { getAllUserTx } = require("./lib/user/adminService");
-const moment = require("moment-timezone");
-const { verifyPageToken } = require("./lib/jwtHandler");
-const { generatePageExpiryToken } = require("./lib/jwtHandler");
- generatePageExpiryToken('tushant029@gmail.com',"xyzzzz")
+
+
 
 cron.schedule("0 30 18 * * *", async () => {
   // Get the last execution date from the file

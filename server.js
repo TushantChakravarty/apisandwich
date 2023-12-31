@@ -57,7 +57,7 @@ cron.schedule("0 30 18 * * *", async () => {
 //   await adminDao.updateBalanceAdmin()
 // });
 
-//getTransaction('257037899')
+//getTransaction('o_KMzjmQNr24JZNa84-231231120650')
 //test()
 //getAllTransactions(0,10)
 config.dbConfig((err) => {

@@ -50,9 +50,7 @@ cron.schedule("0 30 18 * * *", async () => {
 //   await adminDao.getTotalVolume("success");
 //   await adminDao.updateGatewayVolumeData();
 // });
-// adminDao.updateVolumeData("success");
-// adminDao.getTotalVolume("success");
-//adminDao.updateGatewayVolumeData();
+
 // cron.schedule("*/30 * * * *", async () => {
 //   await adminDao.updateTotalGatewayBalance();
 //   await adminDao.updateBalanceMerchants()

@@ -15,35 +15,35 @@ const { test } = require("./lib/user/adminService");
 
 
 
-cron.schedule("0 30 18 * * *", async () => {
-  // Get the last execution date from the file
-  const admin = await adminDao.getUserDetails({
-    emailId: "samir123@payhub",
-  });
-  const lastExecutionDate = admin.lastExecutionDate;
+// cron.schedule("0 30 18 * * *", async () => {
+//   // Get the last execution date from the file
+//   const admin = await adminDao.getUserDetails({
+//     emailId: "samir123@payhub",
+//   });
+//   const lastExecutionDate = admin.lastExecutionDate;
 
-  // Get the current date
-  const currentDate = new Date().toISOString().split("T")[0];
+//   // Get the current date
+//   const currentDate = new Date().toISOString().split("T")[0];
 
-  // Check if the function has not been executed today
-  if (lastExecutionDate !== currentDate) {
-    // Run your function
-    myFunction();
-    console.log("running");
+//   // Check if the function has not been executed today
+//   if (lastExecutionDate !== currentDate) {
+//     // Run your function
+//     myFunction();
+//     console.log("running");
 
-    // Update the last execution date in the file
-    //fs.writeFileSync(DATE_FILE, currentDate);
-    const update = {
-      lastExecutionDate: currentDate,
-    };
-    adminDao.updateProfile(
-      {
-        emailId: "samir123@payhub",
-      },
-      update
-    );
-  }
-});
+//     // Update the last execution date in the file
+//     //fs.writeFileSync(DATE_FILE, currentDate);
+//     const update = {
+//       lastExecutionDate: currentDate,
+//     };
+//     adminDao.updateProfile(
+//       {
+//         emailId: "samir123@payhub",
+//       },
+//       update
+//     );
+//   }
+// });
 
 // cron.schedule("*/20 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");
@@ -56,6 +56,7 @@ cron.schedule("0 30 18 * * *", async () => {
 //   await adminDao.updateBalanceMerchants()
 //   await adminDao.updateBalanceAdmin()
 // });
+
 
 //getTransaction('o_KMzjmQNr24JZNa84-231231120650')
 //test()

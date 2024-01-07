@@ -14,7 +14,6 @@ const { getCompleteTransactions } = require("./lib/user/transactionDao");
 const { test } = require("./lib/user/adminService");
 
 
-
 // cron.schedule("0 30 18 * * *", async () => {
 //   // Get the last execution date from the file
 //   const admin = await adminDao.getUserDetails({
@@ -74,6 +73,7 @@ config.dbConfig((err) => {
 
   // init express app
   const app = express();
+  app.set('trust proxy', true)
 
   // config express
   config.expressConfig(app);

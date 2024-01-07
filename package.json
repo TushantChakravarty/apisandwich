@@ -9,7 +9,6 @@
     "qa": "NODE_ENV=qa node server.js",
     "start": " node server.js"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -39,6 +38,7 @@
     "fs": "^0.0.1-security",
     "git": "^0.1.5",
     "hash.js": "^1.1.7",
+    "ip": "^1.1.8",
     "js-md5": "^0.8.3",
     "js-sha256": "^0.10.1",
     "jsonwebtoken": "^8.5.1",

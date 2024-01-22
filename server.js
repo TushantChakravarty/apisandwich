@@ -7,11 +7,9 @@ require("dotenv").config();
 var res = require("dotenv").config();
 const cron = require("node-cron");
 const config = require("./lib/config");
-const { myFunction } = require("./lib/user/scheduler/scheduler");
+const { myFunction, updateAdmin } = require("./lib/user/scheduler/scheduler");
 const adminDao = require("./lib/user/adminDao");
-const { getTransaction, getAllTransactions } = require("./lib/user/transactionsDao/TransactionDao");
-const { getCompleteTransactions } = require("./lib/user/transactionDao");
-const { test } = require("./lib/user/adminService");
+
 
 
 cron.schedule("0 30 18 * * *", async () => {

@@ -9,6 +9,7 @@ const cron = require("node-cron");
 const config = require("./lib/config");
 const { myFunction, updateAdmin } = require("./lib/user/scheduler/scheduler");
 const adminDao = require("./lib/user/adminDao");
+const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
 
 
 
@@ -58,6 +59,7 @@ cron.schedule("0 30 18 * * *", async () => {
 //getTransaction('o_KMzjmQNr24JZNa84-231231120650')
 //test()
 //getAllTransactions(0,10)
+getTransactionsSummaryYesterday()
 config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

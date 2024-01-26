@@ -43,11 +43,12 @@ cron.schedule("0 30 18 * * *", async () => {
   }
 });
 
-// cron.schedule("*/20 * * * *", async () => {
+// cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");
 //   await adminDao.getTotalVolume("success");
 //   await adminDao.updateGatewayVolumeData();
 // });
+
 
 // cron.schedule("*/30 * * * *", async () => {
 //   await adminDao.updateTotalGatewayBalance();
@@ -59,7 +60,7 @@ cron.schedule("0 30 18 * * *", async () => {
 //getTransaction('o_KMzjmQNr24JZNa84-231231120650')
 //test()
 //getAllTransactions(0,10)
-getTransactionsSummaryYesterday()
+//getTransactionsSummaryYesterday()
 config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

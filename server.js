@@ -59,7 +59,7 @@ cron.schedule("0 30 18 * * *", async () => {
 // });
 
 //getTransactionsSummaryYesterday()
-
+updateAdmin()
 // function connectDb() {
 //   const dbUrl = 'mongodb+srv://payhub:GBA97ISU6itkVmzM@cluster0.omnvtd0.mongodb.net/?retryWrites=true&w=majority';
 

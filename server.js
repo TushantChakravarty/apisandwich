@@ -15,50 +15,53 @@ const { getAllUsers } = require("./lib/user/userDao");
 const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
 
-updatePendingTransactionStatus()
-cron.schedule("0 30 18 * * *", async () => {
-  // Get the last execution date from the file
-  const admin = await adminDao.getUserDetails({
-    emailId: "samir123@payhub",
-  });
-  const lastExecutionDate = admin.lastExecutionDate;
 
-  // Get the current date
-  const currentDate = new Date().toISOString().split("T")[0];
+// cron.schedule("0 30 18 * * *", async () => {
+//   // Get the last execution date from the file
+//   const admin = await adminDao.getUserDetails({
+//     emailId: "samir123@payhub",
+//   });
+//   const lastExecutionDate = admin.lastExecutionDate;
 
-  // Check if the function has not been executed today
-  if (lastExecutionDate !== currentDate) {
-    // Run your function
-    myFunction();
-    updateAdmin()
-    console.log("running");
+//   // Get the current date
+//   const currentDate = new Date().toISOString().split("T")[0];
 
-    // Update the last execution date in the file
-    //fs.writeFileSync(DATE_FILE, currentDate);
-    const update = {
-      lastExecutionDate: currentDate,
-    };
-    adminDao.updateProfile(
-      {
-        emailId: "samir123@payhub",
-      },
-      update
-    );
-  }
+//   // Check if the function has not been executed today
+//   if (lastExecutionDate !== currentDate) {
+//     // Run your function
+//     myFunction();
+//     updateAdmin()
+//     console.log("running");
+
+//     // Update the last execution date in the file
+//     //fs.writeFileSync(DATE_FILE, currentDate);
+//     const update = {
+//       lastExecutionDate: currentDate,
+//     };
+//     adminDao.updateProfile(
+//       {
+//         emailId: "samir123@payhub",
+//       },
+//       update
+//     );
+//   }
+// });
+
+cron.schedule("*/10 * * * *", async () => {
+  await adminDao.updateVolumeData("success");
+  await adminDao.getTotalVolume("success");
+  await adminDao.updateGatewayVolumeData();
 });
 
-// cron.schedule("*/10 * * * *", async () => {
-//   await adminDao.updateVolumeData("success");
-//   await adminDao.getTotalVolume("success");
-//   await adminDao.updateGatewayVolumeData();
-// });
 
-
-// cron.schedule("*/30 * * * *", async () => {
-//   await adminDao.updateTotalGatewayBalance();
-//   await adminDao.updateBalanceMerchants()
-//   await adminDao.updateBalanceAdmin()
-// });
+cron.schedule("*/30 * * * *", async () => {
+  await adminDao.updateTotalGatewayBalance();
+  await adminDao.updateBalanceMerchants()
+  await adminDao.updateBalanceAdmin()
+});
+cron.schedule("*/40 * * * *", async () => {
+  updatePendingTransactionStatus()
+});
 
 //getTransactionsSummaryYesterday()
 

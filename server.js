@@ -12,9 +12,10 @@ const adminDao = require("./lib/user/adminDao");
 const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
 const { MongoClient } = require('mongodb');
 const { getAllUsers } = require("./lib/user/userDao");
+const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
 
-
+updatePendingTransactionStatus()
 cron.schedule("0 30 18 * * *", async () => {
   // Get the last execution date from the file
   const admin = await adminDao.getUserDetails({

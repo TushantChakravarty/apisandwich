@@ -12,8 +12,8 @@ const adminDao = require("./lib/user/adminDao");
 const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
 const { MongoClient } = require('mongodb');
 const { getAllUsers } = require("./lib/user/userDao");
-const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
-const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
+// const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
+// const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
 
 

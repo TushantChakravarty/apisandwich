@@ -12,6 +12,7 @@ const adminDao = require("./lib/user/adminDao");
 const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
 const { MongoClient } = require('mongodb');
 const { getAllUsers } = require("./lib/user/userDao");
+const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 
 
 
@@ -45,7 +46,7 @@ cron.schedule("0 30 18 * * *", async () => {
     );
   }
 });
-
+getAllPendinTransactionsPaythrough()
 // cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");
 //   await adminDao.getTotalVolume("success");

@@ -47,6 +47,7 @@ cron.schedule("0 30 18 * * *", async () => {
     );
   }
 });
+
 //getAllPendinTransactionsPaythrough()
 // cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");

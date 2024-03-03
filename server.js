@@ -48,6 +48,7 @@ cron.schedule("0 30 18 * * *", async () => {
   }
 });
 
+
 //getAllPendinTransactionsPaythrough()
 // cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");
@@ -66,7 +67,6 @@ cron.schedule("0 30 18 * * *", async () => {
 // });
 
 //getTransactionsSummaryYesterday()
-
 // function connectDb() {
 //   const dbUrl = 'mongodb+srv://payhub:GBA97ISU6itkVmzM@cluster0.omnvtd0.mongodb.net/?retryWrites=true&w=majority';
 

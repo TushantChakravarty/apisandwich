@@ -67,38 +67,7 @@ cron.schedule("0 30 18 * * *", async () => {
 // });
 
 //getTransactionsSummaryYesterday()
-// function connectDb() {
-//   const dbUrl = 'mongodb+srv://payhub:GBA97ISU6itkVmzM@cluster0.omnvtd0.mongodb.net/?retryWrites=true&w=majority';
 
-//   // Create a new MongoClient instance
-//   const client = new MongoClient(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-
-//   // Connect to the MongoDB server
-//   client.connect(async (err) => {
-//       if (err) {
-//           console.error('Error connecting to MongoDB:', err);
-//           //callback(err);
-//       } else {
-//           console.log('Connected to MongoDB');
-//           const users = await adminDao.getUserDetails({
-//             emailId:'samir123@payhub'
-//           })
-//           //console.log(users)
-//           // Access the database and collection here, if needed
-//           const db = client.db();
-//           const collection = db.collection('admins');
-//           const result = await collection.insertMany([users]);
-
-//           console.log(`${result.insertedCount} users inserted successfully.`);
-//           //console.log('Connected to sandbox', users);
-
-//           // Pass the client instance to the callback
-//           //callback(null, client);
-//       }
-//   });
-// }
-
-// connectDb()
 config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

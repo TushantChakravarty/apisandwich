@@ -64,10 +64,11 @@ cron.schedule("0 30 18 * * *", async () => {
 //   await adminDao.updateBalanceAdmin()
 // });
 // cron.schedule("*/40 * * * *", async () => {
-  // updatePendingTransactionStatus()
+// updatePendingTransactionStatus()
 // });
 
 //getTransactionsSummaryYesterday()
+
 config.dbConfig((err) => {
   if (err) {
     // logger.error(err, 'exiting the app.');

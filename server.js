@@ -7,7 +7,7 @@ require("dotenv").config();
 var res = require("dotenv").config();
 const cron = require("node-cron");
 const config = require("./lib/config");
-const { myFunction, updateAdmin } = require("./lib/user/scheduler/scheduler");
+const { myFunction, updateAdmin, updateAdminYesterdayTx } = require("./lib/user/scheduler/scheduler");
 const adminDao = require("./lib/user/adminDao");
 const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
 const { MongoClient } = require('mongodb');
@@ -33,6 +33,7 @@ cron.schedule("0 30 18 * * *", async () => {
     // Run your function
     myFunction();
     updateAdmin()
+    updateAdminYesterdayTx()
     console.log("running");
 
     // Update the last execution date in the file
@@ -49,7 +50,7 @@ cron.schedule("0 30 18 * * *", async () => {
   }
 });
 
-
+//updateAdminYesterdayTx()
 //getAllPendinTransactionsPaythrough()
 // cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");

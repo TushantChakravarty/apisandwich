@@ -7,17 +7,27 @@ require("dotenv").config();
 var res = require("dotenv").config();
 const cron = require("node-cron");
 const config = require("./lib/config");
-const { myFunction, updateAdmin, updateAdminYesterdayTx } = require("./lib/user/scheduler/scheduler");
+const {
+  myFunction,
+  updateAdmin,
+  updateAdminYesterdayTx,
+} = require("./lib/user/scheduler/scheduler");
 const adminDao = require("./lib/user/adminDao");
-const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/TransactionDao");
-const { MongoClient } = require('mongodb');
+const {
+  getTransactionsSummaryYesterday,
+} = require("./lib/user/transactionsDao/TransactionDao");
+const { MongoClient } = require("mongodb");
 const { getAllUsers } = require("./lib/user/userDao");
-const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
-const { updateVolumeDataPayouts, getTotalAdminVolumePayouts, updatePayoutsBalanceMerchants } = require("./lib/user/payouts/payoutsDao");
+const {
+  updatePendingTransactionStatus,
+} = require("./lib/user/scheduler/statusScheduler");
+const {
+  updateVolumeDataPayouts,
+  getTotalAdminVolumePayouts,
+  updatePayoutsBalanceMerchants,
+} = require("./lib/user/payouts/payoutsDao");
 // const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 // const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
-
-
 
 cron.schedule("0 30 18 * * *", async () => {
   // Get the last execution date from the file
@@ -33,8 +43,8 @@ cron.schedule("0 30 18 * * *", async () => {
   if (lastExecutionDate !== currentDate) {
     // Run your function
     myFunction();
-    updateAdmin()
-    updateAdminYesterdayTx()
+    updateAdmin();
+    updateAdminYesterdayTx();
     console.log("running");
 
     // Update the last execution date in the file
@@ -51,11 +61,7 @@ cron.schedule("0 30 18 * * *", async () => {
   }
 });
 cron.schedule("0 40 18 * * *", async () => {
-  
-   
-    updateAdminYesterdayTx()
-  
-    
+  updateAdminYesterdayTx();
 });
 //updateAdminYesterdayTx()
 //getAllPendinTransactionsPaythrough()
@@ -72,7 +78,7 @@ cron.schedule("0 40 18 * * *", async () => {
 //   await adminDao.updateBalanceMerchants()
 //   await adminDao.updateBalanceAdmin()
 // });
-//updatePayoutsBalanceMerchants()
+// //updatePayoutsBalanceMerchants()
 // cron.schedule("*/40 * * * *", async () => {
 // updatePendingTransactionStatus()
 // });
@@ -92,7 +98,7 @@ config.dbConfig((err) => {
 
   // init express app
   const app = express();
-  app.set('trust proxy', true)
+  app.set("trust proxy", true);
 
   // config express
   config.expressConfig(app);

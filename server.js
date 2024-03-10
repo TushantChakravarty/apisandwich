@@ -13,6 +13,7 @@ const { getTransactionsSummaryYesterday } = require("./lib/user/transactionsDao/
 const { MongoClient } = require('mongodb');
 const { getAllUsers } = require("./lib/user/userDao");
 const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
+const { updateVolumeDataPayouts, getTotalAdminVolumePayouts, updatePayoutsBalanceMerchants } = require("./lib/user/payouts/payoutsDao");
 // const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 // const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
@@ -49,11 +50,12 @@ cron.schedule("0 30 18 * * *", async () => {
     );
   }
 });
-cron.schedule("0 32 18 * * *", async () => {
+cron.schedule("0 40 18 * * *", async () => {
   
    
     updateAdminYesterdayTx()
   
+    
 });
 //updateAdminYesterdayTx()
 //getAllPendinTransactionsPaythrough()
@@ -61,14 +63,16 @@ cron.schedule("0 32 18 * * *", async () => {
 //   await adminDao.updateVolumeData("success");
 //   await adminDao.getTotalVolume("success");
 //   await adminDao.updateGatewayVolumeData();
+// await updateVolumeDataPayouts("success")
+// await getTotalAdminVolumePayouts("success")
 // });
-
 
 // cron.schedule("*/30 * * * *", async () => {
 //   await adminDao.updateTotalGatewayBalance();
 //   await adminDao.updateBalanceMerchants()
 //   await adminDao.updateBalanceAdmin()
 // });
+//updatePayoutsBalanceMerchants()
 // cron.schedule("*/40 * * * *", async () => {
 // updatePendingTransactionStatus()
 // });

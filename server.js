@@ -26,6 +26,7 @@ const {
   getTotalAdminVolumePayouts,
   updatePayoutsBalanceMerchants,
 } = require("./lib/user/payouts/payoutsDao");
+const { airpaytest } = require("./lib/appUtils");
 // const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 // const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
@@ -63,6 +64,7 @@ cron.schedule("0 30 18 * * *", async () => {
 cron.schedule("0 40 18 * * *", async () => {
   updateAdminYesterdayTx();
 });
+airpaytest()
 //updateAdminYesterdayTx()
 //getAllPendinTransactionsPaythrough()
 // cron.schedule("*/10 * * * *", async () => {

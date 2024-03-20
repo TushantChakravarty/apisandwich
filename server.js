@@ -65,7 +65,7 @@ cron.schedule("0 30 18 * * *", async () => {
 cron.schedule("0 40 18 * * *", async () => {
   updateAdminYesterdayTx();
 });
-cashfreepayouttest()
+//cashfreepayouttest()
 //airpaytest()
 //updateAdminYesterdayTx()
 //getAllPendinTransactionsPaythrough()
